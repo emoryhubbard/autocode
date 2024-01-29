@@ -5,10 +5,12 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 import { handler } from './handler';
+import { generate } from './src/api/generate';
 import { provideHttpClient } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './src/app/app.component';
 import { config, newConfig } from './src/app/app.config.server';
+import bodyParser from 'body-parser';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -21,10 +23,11 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-
+  server.use(bodyParser.json());
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   server.get('/api/**', handler);
+  server.post('/api/generate', generate);
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'

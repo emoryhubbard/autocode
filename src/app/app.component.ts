@@ -44,21 +44,22 @@ export class AppComponent {
     }
 
     // grab data
-    this.getData().then((data) => this.data = data.r);
+    //this.getData().then((data) => this.data = data.r);
   }
 
   onSubmit(): void {
     if (this.codeForm.valid) {
       const formData = this.codeForm.value;
       console.log("Form submitted!")
-      //this.generateCode(formData);
+      this.generateCode(formData);
     }
   }
 
   async generateCode(formData: any): Promise<void> {
+    console.log("formData before post: " + formData);
     try {
-      const response = await firstValueFrom(
-        this.http.post(this.baseURL + 'api/generate-code', formData, {
+      const response  = await firstValueFrom(
+        this.http.post<{code: string}>(this.baseURL + 'api/generate', formData, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -66,14 +67,13 @@ export class AppComponent {
         })
       );
 
-      // Assuming response.result contains the generated code
-      //this.codeForm.patchValue({ codeOutput: response?.result });
+      this.codeForm.patchValue({ codeOutput: response.code });
     } catch (error) {
       console.error('Error generating code:', error);
     }
   }
 
-  async getData(): Promise<any> {
+  /*async getData(): Promise<any> {
     return await firstValueFrom(
       this.http.get(this.baseURL + 'api/me', {
         headers: {
@@ -82,5 +82,5 @@ export class AppComponent {
         responseType: 'json'
       })
     );
-  };
+  };*/
 }
