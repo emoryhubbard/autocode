@@ -4,7 +4,7 @@ This Angular 17.0 application is a self-testing and self-debugging code generato
 
 Its primary goal is to streamline the process of code generation by incorporating a ChatGPT API for prompt-based JavaScript code creation. The generated code undergoes an automatic testing and debugging loop within the Angular SSR environment, ensuring that the output is already tested and verified.
 
-**[Autocode Demo Video](#)** <!-- Replace with the link to your demo video when available -->
+**[Autocode Demo Video](https://youtu.be/Iq5_HaKzL6Y)**
 
 # Development Environment
 
