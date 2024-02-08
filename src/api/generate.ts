@@ -5,7 +5,7 @@ export const generate = async (req: any, res: any) => {
     const apiKey = req.body.apiKey;
     const userPrompt = req.body.prompt;
 
-    let maxAttempts = 3;
+    const maxAttempts = 1;
     let code = '';
     let logs = '';
     let passing = false;
