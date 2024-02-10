@@ -4,8 +4,6 @@ import express, { json } from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
-import { handler } from './handler';
-import { generate } from './src/api/generate';
 import { provideHttpClient } from '@angular/common/http';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './src/app/app.component';
@@ -24,8 +22,8 @@ export function app(): express.Express {
   server.use(json());
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
-  server.get('/api/**', handler);
-  server.post('/api/generate', generate);
+  //server.get('/api/**', handler);
+  //server.post('/api/generate', generate);
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
     maxAge: '1y'

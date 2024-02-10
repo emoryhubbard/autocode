@@ -14,8 +14,9 @@ import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
   imports: [RouterOutlet, ReactiveFormsModule],
 })
 export class AppComponent {
-  title = 'angular-endpoint-test6';
-
+  title = 'Autoode';
+  NG_APP_HELLO = import.meta.env['NG_APP_HELLO'];
+  NG_APP_GENERATE_URL = import.meta.env['NG_APP_GENERATE_URL'];
   data!: string;
   baseURL!: string;
   isServer: boolean;
@@ -57,9 +58,12 @@ export class AppComponent {
 
   async generateCode(formData: any): Promise<void> {
     console.log("formData before post: " + formData);
+    console.log("GENERATE_URL: " + this.NG_APP_GENERATE_URL);
     try {
       const response  = await firstValueFrom(
-        this.http.post<{code: string}>(this.baseURL + 'api/generate', formData, {
+        this.http.post<{code: string}>(this.NG_APP_GENERATE_URL, formData, {
+        //this.http.post<{code: string}>('http://localhost:3000/api/generate', formData, {
+        //this.http.post<{code: string}>(this.baseURL + 'api/generate', formData, {
           headers: {
             'Content-Type': 'application/json',
           },
