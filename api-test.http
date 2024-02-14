@@ -1,0 +1,6 @@
+POST https://autocode-api-prod.vercel.app/api/screenshot HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://bafybeigsw7gagsmvxxivt5kvrl6ueld7yszzef2aylxbzzafez6ybxscca.ipfs.nftstorage.link/"
+}
