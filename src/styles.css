@@ -1,3 +1,33 @@
+#spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+}
+.has-spinner {
+  display: inline;
+}
+.gen-code {
+  margin-bottom: 2rem;
+}
+
+.spinning {
+  visibility: visible;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+.hidden {
+  visibility: hidden;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
 :root {
     --background-body: #0d1117;
   

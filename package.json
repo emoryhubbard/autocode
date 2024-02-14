@@ -10,7 +10,6 @@
     "test": "ng test",
     "serve:ssr:autocode": "node dist/autocode/server/server.mjs"
   },
-  
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.1.0",
@@ -25,6 +24,7 @@
     "@angular/ssr": "^17.1.1",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "primeng": "^17.7.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

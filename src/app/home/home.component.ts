@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DOCUMENT, isPlatformServer } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Inject, Optional, PLATFORM_ID } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+//import { Button, ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
@@ -21,12 +22,13 @@ export class HomeComponent {
   baseURL!: string;
   isServer: boolean;
   codeForm: FormGroup;
+  @ViewChild('spinner') spinner!: ElementRef;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private document: Document,
     @Optional() @Inject('serverUrl') private serverUrl: string,
-    private http: HttpClient,
+    private http: HttpClient
   ) {
     this.codeForm = new FormGroup({
       prompt: new FormControl(''),
@@ -48,10 +50,16 @@ export class HomeComponent {
     //this.getData().then((data) => this.data = data.r);
   }
 
-  onSubmit(): void {
+  /*onSubmit(): void {
     if (this.codeForm.valid) {
       const formData = this.codeForm.value;
       console.log("Form submitted!")
+      this.generateCode(formData);
+    }
+  }*/
+  onSubmit(): void {
+    if (this.codeForm.valid) {
+      const formData = this.codeForm.value;
       this.generateCode(formData);
     }
   }
@@ -59,6 +67,8 @@ export class HomeComponent {
   async generateCode(formData: any): Promise<void> {
     console.log("formData before post: " + formData);
     console.log("GENERATE_URL: " + this.NG_APP_GENERATE_URL);
+    this.spinner.nativeElement.classList.remove('hidden');
+    this.spinner.nativeElement.classList.add('spinning');
     try {
       const response  = await firstValueFrom(
         this.http.post<{code: string}>(this.NG_APP_GENERATE_URL, formData, {
@@ -75,6 +85,9 @@ export class HomeComponent {
     } catch (error) {
       console.error('Error generating code:', error);
     }
+    this.spinner.nativeElement.classList.remove('spinning');
+    this.spinner.nativeElement.classList.add('hidden');
+
   }
 
   /*async getData(): Promise<any> {
