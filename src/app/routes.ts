@@ -1,8 +1,9 @@
-import { Routes } from '@angular/router';
+import {Routes} from '@angular/router';
+import {GetApiKeyComponent} from './get-api-key/get-api-key.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { GetApiKeyComponent } from './get-api-key/get-api-key.component';
 
-export const routes: Routes = [
+const routeConfig: Routes = [
     {
       path: '',
       component: HomeComponent,
@@ -14,3 +15,5 @@ export const routes: Routes = [
       title: 'Get API Key',
     },
   ];
+
+export default routeConfig;

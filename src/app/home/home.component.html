@@ -1,0 +1,54 @@
+<div class='has-has-main'>
+    <div class='has-main'>
+      <main class='text-[1.35rem] leading-[1.618] max-w-[38em] text-[#4a4a4a] bg-[#f9f9f9] m-auto p-[13px] sm:text-[1.53rem] md:text-[1.8rem] lg:text-[1.8rem]'>
+        <section>
+          <h1 class='leading-[1.1] font-bold break-words mt-12 mb-6 text-[2.35em]'>
+            Autocode Generator
+          </h1>
+          <!--<h2>{{ data }}</h2>-->
+          <p class="mt-0 mb-10">
+            Generate debugged and tested JavaScript code. Provide your prompt and ChatGPT API key to receive working, running code.
+          </p>
+          <!-- Code Generation Section -->
+          <form (ngSubmit)="onSubmit()" [formGroup]="codeForm">
+            <fieldset class="block font-semibold mb-2">
+              <label for="prompt" class="block font-semibold mb-2">
+                Enter Your Code Prompt:
+              </label>
+              <textarea formControlName="prompt"
+                rows="6"
+                class="border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="Write a prompt describing the code you want to generate..."
+              ></textarea>
+              <label for="apiKey" class="block font-semibold mb-2">
+                Enter ChatGPT API Key:
+              </label>
+              <input formControlName="apiKey"
+                type="text"
+                class="border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="Enter your ChatGPT API Key"
+              />
+              <a href="get-api-key">Don't have an API key?</a>
+            </fieldset>
+            <!-- CTA Button -->
+            <button type="submit"
+              class="generate-button inline-block text-center no-underline whitespace-nowrap bg-[#1d7484] text-[#f9f9f9] border cursor-pointer box-border px-[10px] py-[5px] rounded-[1px] border-solid border-[#1d7484] bg-[#982c61] text-[#f9f9f9]">
+              Generate Code
+            </button>
+            <p>Note: it can take up to 3 minutes. A 502 error due to server inactivity is resolved by trying a second time. Future versions will use AWS lambda functions to avoid spin down.</p>
+          <!-- Code Output Section -->
+          <div>
+            <h2 class='leading-[1.1] font-bold break-words mt-12 mb-6 text-[2em]'>
+              Generated Code
+            </h2>
+            <textarea formControlName="codeOutput"
+              rows="6"
+              class="output-code border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+              placeholder="Generated code will appear here..."
+            ></textarea>
+          </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
