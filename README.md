@@ -1,11 +1,12 @@
 # Overview
 
-This Angular 17.0 application is a self-testing and self-debugging code generator named **Autocode**.
+This Angular 17.0 application is a self-testing and self-debugging code generator named **[Autocode](https://autocode-five.vercel.app/)**.
 
 Its primary goal is to streamline the process of code generation by incorporating a ChatGPT API for prompt-based JavaScript code creation. The generated code undergoes an automatic testing and debugging loop from [Autocode's Express API](https://github.com/emoryhubbard/express-autocode-api), ensuring that the output is already tested and verified.
 
-**[Autocode Demo Video Version 2.0](https://youtu.be/Iq5_HaKzL6Y)**
-**[Autocode Demo Video Version 1.0](https://youtu.be/Iq5_HaKzL6Y)**
+**[Autocode Version 2.0 Demo Video](https://youtu.be/Iq5_HaKzL6Y)**
+
+**[Autocode Version 1.0 Demo Video](https://youtu.be/Iq5_HaKzL6Y)**
 
 # Development Environment
 
