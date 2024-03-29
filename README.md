@@ -1,8 +1,46 @@
 # Overview
 
+## Autocode Native Interface
+
+The Autocode Native Interface is an expanded version of the original Autocode application, designed specifically for generating, testing, and debugging code for React applications. Unlike its predecessor, **[Autocode Classic](https://autocode-five.vercel.app/)**, the Autocode Native Interface offers enhanced capabilities for modifying both .js and .jsx files, with the ultimate goal of helping React Developers automate implementation of most app features through writing precise instructions.
+
+Instead of replacing developers, it is meant to reduce the tedium of converting pseudocode thoughts or specifications into working code, and is only suitable for use by experienced developers who know precisely how they want their data to be processed. The goal is allow developers to spend more time thinking and less time translating, typing, and debugging to boost productivity.
+
+### Purpose
+
+The primary purpose of the Autocode Native Interface is to simplify the process of code generation and verification for React applications. It provides developers with a local development interface to interact with a local Autocode Native client, enabling them to incrementally add entire features to their applications through bite-sized steps.
+
+### Usage
+
+Note: usage of the Autocode Native Interface is currently a complex operation under development, and the results are limited by only allowing a small number of steps to be run, and by not capturing React logs server-side, only client-side, making it unable to solve most debugging issues. It hasn't quite hit that "magic" moment. It is not recommended as a productivity tool until then.
+
+To use the Autocode Native Interface, developers must follow these steps:
+
+1. Clone the following repositories to their local machine:
+   - Autocode
+   - Autocode Native
+   - Express Autocode API
+   - Their own repository that they desire to modify
+
+2. Run `npm run dev` on their React application to enable automatic reloading of file changes.
+
+3. Configure the `.env` file in each repository to use the correct URLs for their local machine.
+
+4. Provide their own `serviceAccountKey.json` file for their Firebase account in the Express Autocode API repository.
+
+5. Run the Autocode application and navigate to the create-job page.
+
+6. Follow the prompts to add a new feature to their application.
+
+7. Run the Autocode Native client, which automatically modifies the files in their repository to include the new feature and performs testing.
+
+8. If any errors occur during the testing or debugging process, detailed information will be displayed in the console.
+
+## Autocode Classic
+
 This Angular 17.0 application is a self-testing and self-debugging code generator named **[Autocode](https://autocode-five.vercel.app/)**.
 
-Its primary goal is to streamline the process of code generation by incorporating a ChatGPT API for prompt-based JavaScript code creation. The generated code undergoes an automatic testing and debugging loop from [Autocode's Express API](https://github.com/emoryhubbard/express-autocode-api), ensuring that the output is already tested and verified.
+Its primary goal is to improve the quality of code generation by incorporating a ChatGPT API for prompt-based JavaScript code creation. The generated code undergoes an automatic testing and debugging loop from [Autocode's Express API](https://github.com/emoryhubbard/express-autocode-api), ensuring that the output is already tested and verified.
 
 **[Autocode Version 2.0 Demo Video](https://youtu.be/zm6YHLV1Dag)**
 
