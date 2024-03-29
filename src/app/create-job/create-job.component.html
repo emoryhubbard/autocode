@@ -1,0 +1,321 @@
+<div class='has-has-main'>
+    <div class='has-main'>
+      <main class='text-[1.35rem] leading-[1.618] max-w-[38em] text-[#4a4a4a] bg-[#f9f9f9] m-auto p-[13px] sm:text-[1.53rem] md:text-[1.8rem] lg:text-[1.8rem]'>
+        <section>
+          <h1 class='leading-[1.1] font-bold break-words mt-12 mb-6 text-[2.35em]'>
+            Autocode
+          </h1>
+          <!--<h2>{{ data }}</h2>-->
+          <p class="mt-0 mb-10">
+            Autocode can automatically add a feature to your React app. To get started, enter the information below.
+        </p>
+            <p class="mt-0 mb-10">
+            Autocode will then perform the changes on your code repository, generating debugged and tested code at each step.
+        </p>
+          <!-- Code Generation Section -->
+          <form (ngSubmit)="onSubmit()" [formGroup]="codeForm">
+            <fieldset class="block font-semibold mb-2">
+              <label for="prompt" class="block font-semibold mb-2">
+                Start by entering a description of your feature:
+              </label>
+              <textarea formControlName="prompt"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='Eg. "Add a Last-Visited indicator on the home page."'
+              ></textarea>
+              <label class="block font-semibold mb-2">
+                
+            Then, break the task down into steps, by considering just a small code change for one file at a time, until the goal is achieved, as well as any additional file information.
+              </label>
+              <label for="stepDescription1" class="block font-semibold mb-2">
+                Describe Step 1:
+              </label>
+              <textarea formControlName="stepDescription1"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="Add a function called setLastVisit to page.jsx that uses the setLocalStorage function in utils.mjs. to set lastVisit as the current time."
+              ></textarea>
+              
+              
+              <label for="fileName1" class="block font-semibold mb-2">
+                The file name of the file to be changed for this step:
+              </label>
+              <input formControlName="fileName1"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="page.jsx"
+              />
+              
+              <label for="testPath1" class="block font-semibold mb-2">
+                A URL that allows that file to be run and tested:
+              </label>
+              <input formControlName="testPath1"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="http://localhost:3000"
+              />
+              <label for="filePath1" class="block font-semibold mb-2">
+                The file path of the file to be changed for this step:
+              </label>
+              <input formControlName="filePath1"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx"
+              />
+              
+              <label for="secondFileName1" class="block font-semibold mb-2">
+                The file name of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFileName1"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="utils.mjs"
+              />
+              
+              <label for="secondFilePath1" class="block font-semibold mb-2">
+                The file path of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFilePath1"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="/home/emoryhubbardiv/Documents/tailwindify/src/app/components/utils.mjs"
+              />
+              
+              <label class="block font-semibold mb-2">
+                
+                You can continue adding more steps below. When finished, you can leave any unused steps blank.
+                  </label>
+              <label for="stepDescription2" class="block font-semibold mb-2">
+                Describe Step 2:
+              </label>
+              <textarea formControlName="stepDescription2"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='Add a function called getLastVisit to page.jsx that uses the getLocalStorage function in utils.mjs.'
+              ></textarea>
+              
+              
+              <label for="fileName2" class="block font-semibold mb-2">
+                The file name of the file to be changed for this step:
+              </label>
+              <input formControlName="fileName2"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='page.jsx'
+              />
+              
+              <label for="testPath2" class="block font-semibold mb-2">
+                A URL that allows that file to be run and tested:
+              </label>
+              <input formControlName="testPath2"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder="http://localhost:3000"
+              />
+              <label for="filePath2" class="block font-semibold mb-2">
+                The file path of the file to be changed for this step:
+              </label>
+              <input formControlName="filePath2"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+              />
+              
+              <label for="secondFileName2" class="block font-semibold mb-2">
+                The file name of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFileName2"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='utils.mjs'
+              />
+              
+              <label for="secondFilePath2" class="block font-semibold mb-2">
+                The file path of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFilePath2"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/components/utils.mjs'
+              />
+              <label for="stepDescription3" class="block font-semibold mb-2">
+                Describe Step 3:
+              </label>
+              <textarea formControlName="stepDescription3"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='Add a prop called lastVisit to the useState in page.jsx and set its initial value with getLastVisit, and add that same lastVisit to the setAllValues function in useEffect as well.'
+              ></textarea>
+              
+              
+              <label for="fileName3" class="block font-semibold mb-2">
+                The file name of the file to be changed for this step:
+              </label>
+              <input formControlName="fileName3"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='page.jsx'
+              />
+              
+              <label for="testPath3" class="block font-semibold mb-2">
+                A URL that allows that file to be run and tested:
+              </label>
+              <input formControlName="testPath3"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='http://localhost:3000'
+              />
+              <label for="filePath3" class="block font-semibold mb-2">
+                The file path of the file to be changed for this step:
+              </label>
+              <input formControlName="filePath3"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+              />
+              
+              <label for="secondFileName3" class="block font-semibold mb-2">
+                The file name of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFileName3"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              
+              <label for="secondFilePath3" class="block font-semibold mb-2">
+                The file path of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFilePath3"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              <label for="stepDescription4" class="block font-semibold mb-2">
+                Describe Step 4:
+              </label>
+              <textarea formControlName="stepDescription4"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='In the useEffect hook in page.jsx, call setLastVisit with the current time.'
+              ></textarea>
+              
+              
+              <label for="fileName4" class="block font-semibold mb-2">
+                The file name of the file to be changed for this step:
+              </label>
+              <input formControlName="fileName4"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='page.jsx'
+              />
+              
+              <label for="testPath4" class="block font-semibold mb-2">
+                A URL that allows that file to be run and tested:
+              </label>
+              <input formControlName="testPath4"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='http://localhost:3000'
+              />
+              <label for="filePath4" class="block font-semibold mb-2">
+                The file path of the file to be changed for this step:
+              </label>
+              <input formControlName="filePath4"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+              />
+              
+              <label for="secondFileName4" class="block font-semibold mb-2">
+                The file name of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFileName4"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              
+              <label for="secondFilePath4" class="block font-semibold mb-2">
+                The file path of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFilePath4"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              <label for="stepDescription5" class="block font-semibold mb-2">
+                Describe Step 5:
+              </label>
+              <textarea formControlName="stepDescription5"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='Modify the h1 in page.jsx to say Transform Your Styles: Last Visited [insert time here]. Instead of insert time here, use the lastVisit prop.'
+              ></textarea>
+              
+              
+              <label for="fileName5" class="block font-semibold mb-2">
+                The file name of the file to be changed for this step:
+              </label>
+              <input formControlName="fileName5"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='page.jsx'
+              />
+              
+              <label for="testPath5" class="block font-semibold mb-2">
+                A URL that allows that file to be run and tested:
+              </label>
+              <input formControlName="testPath5"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='http://localhost:3000'
+              />
+              <label for="filePath5" class="block font-semibold mb-2">
+                The file path of the file to be changed for this step:
+              </label>
+              <input formControlName="filePath5"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+              />
+              
+              <label for="secondFileName5" class="block font-semibold mb-2">
+                The file name of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFileName5"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              
+              <label for="secondFilePath5" class="block font-semibold mb-2">
+                The file path of the second file mentioned in this step (if applicable):
+              </label>
+              <input formControlName="secondFilePath5"
+                type="text"
+                class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='None'
+              />
+              
+              
+              
+            </fieldset>
+            <!-- CTA Button -->
+            <button type="submit"
+              class="generate-button inline-block text-center no-underline whitespace-nowrap bg-[#1d7484] text-[#f9f9f9] border cursor-pointer box-border px-[10px] py-[5px] rounded-[1px] border-solid border-[#1d7484] bg-[#982c61] text-[#f9f9f9]">
+              Submit Feature
+              <div class="has-spinner"><div #spinner id="spinner" class="hidden"></div></div>
+            </button>
+            <h2 #featureSubmitted class='feature-submitted leading-[1.1] font-bold break-words mt-12 mb-6 text-[2em]'>
+              
+            </h2>
+            <p>Note: Future versions will predict field values for target and file information based on your repository structure, saving time and allowing just the step description to complete each step. In addition, this prototype interface will be updated to support any number of steps. Currently it only allows up to 5 steps.</p>
+          <!-- Code Output Section -->
+          <div>
+          </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>

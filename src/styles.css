@@ -1,3 +1,9 @@
+.wide-input {
+  width: 100%;
+}
+.short-text-area {
+  height: 4rem;
+}
 #spinner {
   display: inline-block;
   width: 1rem;

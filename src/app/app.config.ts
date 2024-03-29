@@ -7,6 +7,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GetApiKeyComponent } from './get-api-key/get-api-key.component';
 import { HomeComponent } from './home/home.component';
+import { CreateJobComponent } from './create-job/create-job.component';
 
 const routeConfig: Routes = [
   {
@@ -19,6 +20,11 @@ const routeConfig: Routes = [
     component: GetApiKeyComponent,
     title: 'Get API Key',
   },
+  {
+    path: 'create-job',
+    component: CreateJobComponent,
+    title: 'Create New Job',
+  }
 ];
 
 export const appConfig: ApplicationConfig = {
