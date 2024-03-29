@@ -18,8 +18,8 @@ To use the Autocode Native Interface, developers must follow these steps:
 
 1. Clone the following repositories to their local machine:
    - Autocode
-   - Autocode Native
-   - Express Autocode API
+   - [Autocode Native](https://github.com/emoryhubbard/autocode-native)
+   - [Express Autocode API](https://github.com/emoryhubbard/express-autocode-api)
    - Their own repository that they desire to modify
 
 2. Run `npm run dev` on their React application to enable automatic reloading of file changes.
