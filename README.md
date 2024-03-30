@@ -30,7 +30,7 @@ To use the Autocode Native Interface, developers must follow these steps:
 
 4. Provide their own `serviceAccountKey.json` file for their Firebase account in the Express Autocode API repository and create a "features" collection.
 
-5. Run the Autocode application and navigate to the create-job page.
+5. Run Autocode and the Express server, and navigate to the create-job page.
 
 6. Follow the prompts to add a new feature to their application.
 
