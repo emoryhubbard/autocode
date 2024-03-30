@@ -2,17 +2,17 @@
 
 ## Autocode Native Interface
 
-The Autocode Native Interface is an expanded version of the original Autocode application, designed specifically for generating, testing, and debugging code for React applications. Unlike its predecessor, **[Autocode Classic](https://autocode-five.vercel.app/)**, the Autocode Native Interface offers enhanced capabilities for modifying both .js and .jsx files, with the ultimate goal of helping React Developers automate implementation of most app features through writing precise instructions.
+The Autocode Native Interface is an expanded version of the original Autocode application, designed specifically for generating, testing, and debugging code for React applications. Unlike its predecessor, **[Autocode Classic](https://autocode-five.vercel.app/)**, the Autocode Native Interface offers enhanced capabilities for modifying both .js and .jsx files, with the ultimate goal of helping React Developers automate implementation of app features through writing precise instructions.
 
-Instead of replacing developers, it is meant to reduce the tedium of converting pseudocode thoughts or specifications into working code, and is only suitable for use by experienced developers who know precisely how they want their code to work. The goal is allow developers to spend more time thinking and less time translating, typing, and debugging to boost productivity.
+**[Autocode Native Interface Demo Video](https://youtu.be/k9advUWgDaE)**
 
 ### Purpose
 
-The primary purpose of the Autocode Native Interface is to simplify the process of code generation and verification for React applications. It provides developers with a local development interface to interact with a local Autocode Native client, enabling them to incrementally add entire features to their applications through bite-sized steps.
+The primary purpose of the Autocode Native Interface is to simplify the process of code generation and verification for React applications. It provides developers with a local development interface to interact with a local Autocode Native client, enabling them to incrementally add features to their applications through bite-sized steps.
 
 ### Usage
 
-Note: usage of the Autocode Native Interface is currently a complex operation under development, and the results are limited by only allowing a small number of steps to be run, and by not capturing React logs server-side, only client-side, making it unable to solve most debugging issues. It hasn't quite hit that "magic" moment. It is not recommended as a productivity tool until then.
+Note: Autocode is still early in development. Usage is a complex operation, and the results are limited by only allowing a small number of steps to be run, and by not capturing React logs from the dev server, only the browser, which affects the debugging performance.
 
 To use the Autocode Native Interface, developers must follow these steps:
 
@@ -24,9 +24,9 @@ To use the Autocode Native Interface, developers must follow these steps:
 
 2. Run `npm run dev` on their React application to enable automatic reloading of file changes.
 
-3. Configure the `.env` file in each repository to use the correct URLs for their local machine.
+3. Configure the `.env` file and other areas in each repository to use the correct URLs and ports for their local servers.
 
-4. Provide their own `serviceAccountKey.json` file for their Firebase account in the Express Autocode API repository.
+4. Provide their own `serviceAccountKey.json` file for their Firebase account in the Express Autocode API repository and create a "features" collection.
 
 5. Run the Autocode application and navigate to the create-job page.
 
