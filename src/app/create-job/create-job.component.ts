@@ -37,30 +37,35 @@ export class CreateJobComponent {
       prompt: new FormControl(''),
       stepDescription1: new FormControl(''),
       testPath1: new FormControl(''),
+      showHTML1: new FormControl(''),
       fileName1: new FormControl(''),
       filePath1: new FormControl(''),
       secondFileName1: new FormControl(''),
       secondFilePath1: new FormControl(''),
       stepDescription2: new FormControl(''),
       testPath2: new FormControl(''),
+      showHTML2: new FormControl(''),
       fileName2: new FormControl(''),
       filePath2: new FormControl(''),
       secondFileName2: new FormControl(''),
       secondFilePath2: new FormControl(''),
       stepDescription3: new FormControl(''),
       testPath3: new FormControl(''),
+      showHTML3: new FormControl(''),
       fileName3: new FormControl(''),
       filePath3: new FormControl(''),
       secondFileName3: new FormControl(''),
       secondFilePath3: new FormControl(''),
       stepDescription4: new FormControl(''),
       testPath4: new FormControl(''),
+      showHTML4: new FormControl(''),
       fileName4: new FormControl(''),
       filePath4: new FormControl(''),
       secondFileName4: new FormControl(''),
       secondFilePath4: new FormControl(''),
       stepDescription5: new FormControl(''),
       testPath5: new FormControl(''),
+      showHTML5: new FormControl(''),
       fileName5: new FormControl(''),
       filePath5: new FormControl(''),
       secondFileName5: new FormControl(''),
@@ -136,6 +141,7 @@ export class CreateJobComponent {
       const secondFileName = formData['secondFileName' + i];
       const secondFilePath = formData['secondFilePath' + i];
       const testPath = formData['testPath' + i];
+      const showHTML = formData['showHTML' + i];
 
       // If step description is empty, skip
       if (!stepDescription) continue;
@@ -151,7 +157,8 @@ export class CreateJobComponent {
             isTarget: true
           }
         ],
-        testPath: testPath
+        testPath: testPath,
+        showHTML: showHTML
       };
 
       // Add second file if applicable

@@ -14,7 +14,7 @@ The primary purpose of the Autocode Native Interface is to simplify the process 
 
 An **[Autocode Native Interface Preview](https://autocode-five.vercel.app/create-job)** is viewable on the web, but to experiment with it and generate code, you will need to run it locally instead.
 
-Note: Autocode is still early in development. Usage is a complex operation, and the results are limited by only allowing a small number of steps to be run, and by not capturing React logs from the dev server, only the browser, which affects the debugging performance.
+Note: Autocode is still early in development. Usage is a complex operation due to non-predictive form fields, and the results are limited by only allowing a small number of steps to be run.
 
 To use the Autocode Native Interface, developers must follow these steps:
 
