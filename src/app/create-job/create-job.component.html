@@ -15,6 +15,36 @@
           <!-- Code Generation Section -->
           <form (ngSubmit)="onSubmit()" [formGroup]="codeForm">
             <fieldset class="block font-semibold mb-2">
+              <label for="repoURL" class="block font-semibold mb-2">
+              Enter the URL of the GitHub repo to be modified:
+            </label>
+            <input formControlName="repoURL"
+              type="text"
+              class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+              placeholder="Eg. https://github.com/emoryhubbard/tailwindify.git"
+            /><label for="dotenvContents" class="block font-semibold mb-2">
+              Paste the contents of the repo's .env file, if any:
+            </label>
+            <textarea formControlName="dotenvContents"
+                rows="6"
+                class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                placeholder='SESSION_PASSWORD="j7kZg6srEE8WUTfazhiZHtg04PKWyt5x"'
+              ></textarea>
+              <label for="autocodeDotenv" class="block font-semibold mb-2">
+                Configure Autocode instance .env file:
+              </label>
+              <textarea formControlName="autocodeDotenv"
+                  rows="6"
+                  class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                ></textarea>
+              <label for="serviceJSON" class="block font-semibold mb-2">
+                Create Firestore collection "features" and paste serviceAccountKey.json:
+              </label>
+              <textarea formControlName="serviceJSON"
+                  rows="6"
+                  class="short-text-area border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-8 px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
+                  placeholder='{ &#10; "type": "service_account", ...'
+                  ></textarea>
               <label for="prompt" class="block font-semibold mb-2">
                 Start by entering a description of your feature:
               </label>
@@ -24,7 +54,6 @@
                 placeholder='Eg. "Add a Last-Visited indicator on the home page."'
               ></textarea>
               <label class="block font-semibold mb-2">
-                
             Then, break the task down into steps, by considering just a small code change for one file at a time, until the goal is achieved, as well as any additional file information.
               </label>
               <label for="stepDescription1" class="block font-semibold mb-2">
@@ -68,7 +97,7 @@
               <input formControlName="filePath1"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder="/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx"
+                placeholder="src/app/page.jsx"
               />
               
               <label for="secondFileName1" class="block font-semibold mb-2">
@@ -86,7 +115,7 @@
               <input formControlName="secondFilePath1"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder="/home/emoryhubbardiv/Documents/tailwindify/src/app/components/utils.mjs"
+                placeholder="src/app/components/utils.mjs"
               />
               
               <label class="block font-semibold mb-2">
@@ -134,7 +163,7 @@
               <input formControlName="filePath2"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+                placeholder='src/app/page.jsx'
               />
               
               <label for="secondFileName2" class="block font-semibold mb-2">
@@ -152,7 +181,7 @@
               <input formControlName="secondFilePath2"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/components/utils.mjs'
+                placeholder='src/app/components/utils.mjs'
               />
               <label for="stepDescription3" class="block font-semibold mb-2">
                 Describe Step 3:
@@ -195,7 +224,7 @@
               <input formControlName="filePath3"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+                placeholder='src/app/page.jsx'
               />
               
               <label for="secondFileName3" class="block font-semibold mb-2">
@@ -256,7 +285,7 @@
               <input formControlName="filePath4"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+                placeholder='src/app/page.jsx'
               />
               
               <label for="secondFileName4" class="block font-semibold mb-2">
@@ -309,7 +338,7 @@
               <input formControlName="showHTML5"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder="false"
+                placeholder="true"
               />
               <label for="filePath5" class="block font-semibold mb-2">
                 The file path of the file to be changed for this step:
@@ -317,7 +346,7 @@
               <input formControlName="filePath5"
                 type="text"
                 class="wide-input border border-solid border-[#4a4a4a] w-full text-[#4a4a4a] bg-[#f1f1f1] shadow-none box-border mb-[10px] px-[10px] py-[6px] rounded-[4px] border-[#f1f1f1]"
-                placeholder='/home/emoryhubbardiv/Documents/tailwindify/src/app/page.jsx'
+                placeholder='src/app/page.jsx'
               />
               
               <label for="secondFileName5" class="block font-semibold mb-2">

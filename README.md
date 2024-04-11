@@ -4,6 +4,10 @@
 
 The Autocode Native Interface is an expanded version of the original Autocode application, designed specifically for generating, testing, and debugging code for React applications. Unlike its predecessor, **[Autocode Classic](https://autocode-five.vercel.app/)**, the Autocode Native Interface offers enhanced capabilities for modifying both .js and .jsx files, with the ultimate goal of helping React Developers automate implementation of app features through writing precise instructions.
 
+**[Autocode Milestones Video](https://youtu.be/bgMEVYLi2w8)**
+
+**[Example of Successful Feature](https://youtu.be/Yasyke__WGA)**
+
 **[Autocode Native Interface Demo Video](https://youtu.be/k9advUWgDaE)**
 
 ### Purpose

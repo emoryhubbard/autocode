@@ -20,6 +20,7 @@ export class CreateJobComponent {
   title = 'Autocode';
   NG_APP_HELLO = import.meta.env['NG_APP_HELLO'];
   NG_APP_GENERATE_URL = import.meta.env['NG_APP_GENERATE_URL'];
+  NG_APP_REMOTE = import.meta.env['NG_APP_REMOTE'];
   data!: string;
   baseURL!: string;
   isServer: boolean;
@@ -35,6 +36,10 @@ export class CreateJobComponent {
   ) {
     this.codeForm = new FormGroup({
       prompt: new FormControl(''),
+      repoURL: new FormControl(''),
+      dotenvContents: new FormControl(''),
+      autocodeDotenv: new FormControl('PROD="false"\t# This should stay false\nCHATGPT_APIKEY="your key here"\nPORT="4000"\t# Or any other port not used by your repo'),
+      serviceJSON: new FormControl(''),
       stepDescription1: new FormControl(''),
       testPath1: new FormControl(''),
       showHTML1: new FormControl(''),
@@ -76,7 +81,7 @@ export class CreateJobComponent {
 
     console.log("ServerUrl variable is: " + this.serverUrl);
     console.log("Default url is : " + this.document.location.origin + '/');
-    console.log(".env test: " + this.NG_APP_GENERATE_URL);
+    console.log("NG_APP_REMOTE: " + this.NG_APP_REMOTE);
     // get base url
     if (this.isServer && this.serverUrl) {
       this.baseURL = this.serverUrl; //this.appBaseHref
@@ -124,11 +129,18 @@ export class CreateJobComponent {
     }
     this.spinner.nativeElement.classList.remove('spinning');
     this.spinner.nativeElement.classList.add('hidden');
+    if (this.NG_APP_REMOTE == 'true') {
+      
+    }
 
   }
   convertToFeature(formData: any): any {
     const feature: any = {
       description: formData.prompt,
+      repoURL: formData.repoURL,
+      dotenvContents: formData.dotenvContents,
+      autocodeDotenv: formData.autocodeDotenv,
+      serviceJSON: formData.serviceJSON,
       status: "Not Started",
       steps: []
     };
