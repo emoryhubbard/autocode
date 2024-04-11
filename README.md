@@ -76,4 +76,5 @@ This application is developed using the following technologies and tools:
 - Enhance user experience by incorporating additional customization options for the generated code.
 - Explore and implement advanced features for code functionality testing and verification.
 - Continuously improve and expand the functionality of "Autocode" based on user feedback.
+- Design and implement a tracing-inspired algorithm to enhance debugging capabilities
 
