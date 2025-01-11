@@ -4,7 +4,11 @@ A self-testing and self-debugging code generator for React, which has gotten pro
 
 ## Current Status
 
-The latest version is a VS Code extension which provides a chat interface as an AI coding assistant. After creating the intiial VS Code extension version, I found a partner to work with, and we are reworking it to instead have its GUI and functionality incorporated into a fork of an open-source AI coding assistant called Continue, and we are planning on making a PR when it is sufficiently robust. More details and updates will first be placed here as they become available.
+The latest version is a VS Code extension which provides a chat interface as an AI coding assistant:
+
+![Image of Autocode being used to generate and insert code](ComplexCodeSnippetCropped.png)
+
+After creating the initial VS Code extension version, I found a partner at my university who independently came up with a very similar idea, and we are reworking it to instead have its GUI and functionality incorporated into a fork of an open-source AI coding assistant called Continue, with our new tool's GUI (AutoCodeChat) being integrated and accessible through an action, and we are planning on making a PR when it is sufficiently robust. More details and updates will first be placed here as they become available.
 
 Below, you will find the previous versions which functioned as web applications. 
 
