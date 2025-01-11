@@ -1,5 +1,11 @@
 # Overview
 
+A self-testing and self-debugging code generator for React, which has gotten progressively more sophisticated.
+
+## Current Status
+
+The latest version is a VS Code extension which provides a chat interface as an AI coding assistant. Below, you will find the previous versions which functioned as web applications. Before releasing the VS Code extension version, myself and a partner are reworking it to instead have its GUI and functionality incorporated into a fork of an open-source AI coding assistant called Continue, and we are planning on making a PR when it is sufficiently robust. More details and updates will first be placed here as they become available.
+
 ## Autocode Native Interface
 
 The Autocode Native Interface is an expanded version of the original Autocode application, designed specifically for generating, testing, and debugging code for React applications. Unlike its predecessor, **[Autocode Classic](https://autocode-five.vercel.app/)**, the Autocode Native Interface offers enhanced capabilities for modifying both .js and .jsx files, with the ultimate goal of helping React Developers automate implementation of app features through writing precise instructions.
